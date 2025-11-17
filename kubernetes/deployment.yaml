@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: november-flask-app
-        image: november-flask-app:v1
+        image: november-flask-app:v2
         ports:
-        - containerPort: 5000
+        - containerPort: 4000
         imagePullPolicy: Never  # For Minikube local images
