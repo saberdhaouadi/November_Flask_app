@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: november-flask-app
+  namespace: default
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: november-flask-app
+  template:
+    metadata:
+      labels:
+        app: november-flask-app
+    spec:
+      containers:
+      - name: november-flask-app
+        image: november-flask-app:v2
+        ports:
+        - containerPort: 4000
+        imagePullPolicy: Never  # For Minikube local images
